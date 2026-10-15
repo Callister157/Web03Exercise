@@ -1,3 +1,168 @@
-.header{
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
 
+a {
+    text-decoration: none;
+    color: black;
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+section {
+    padding: 60px 40px;
+    border-bottom: 1px solid #ccc;
+}
+
+.section-title {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px 40px;
+    width: fit-content;
+    margin: 0 auto 40px auto;
+    text-align: center;
+    font-size: 24px;
+}
+
+header{
+    background-color: #ffe6cc;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid black;
+    background-color: white;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+.hero-section {
+    background-color: #5986da;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.services-section {
+    background-color: #e2e788;
+}
+
+.services-container {
+    display: flex;
+    gap: 40px;
+    text-align: left;
+}
+
+.service-col{
+    flex: 1;
+}
+
+.service-col h3 {
+    margin-bottom: 15px;
+}
+
+.service-col p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.about-section {
+    background-color: #f774f7;
+}
+
+.about-intro {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 14px;
+}
+
+.about-container {
+    display: flex;
+    gap: 40px;
+}
+
+.about-col {
+    flex: 1;
+}
+
+.about-col h2 {
+    margin-bottom: 20px;
+}
+
+.about-col p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.wave-placeholder{
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 20px 50px 20px 50px;
+    margin-top: 10px;
+}
+
+.contact-section {
+    background-color: #74f7a4;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.input-row input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    resize: none;
+}
+
+.btn-kirim{
+    background-color: rgb(114, 204, 237);
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: fit-content;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #ffe6cc;
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid #ccc;
 }
