@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="id">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Web Trois__Bootstrap</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-    </head>
-<body data-bs-spy="scroll" data-bs-target="#navbarUtama" data-bs-offset="50">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Kreatif</title>
+    <!-- Ganti href dengan path file Bootstrap lokal Anda -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- CSS Kustom untuk kreativitas -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbarUtama" data-bs-offset="70" tabindex="0">
 
     <!-- HEADER / NAVIGASI (Sticky Top) -->
-     <nav id="navbarUTAMA" class="navbar navbar expand-lg navbar-light bg-white shadow-sm fixed-top">
+    <nav id="navbarUtama" class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
         <div class="container">
-            <!-- logo dewe -->
-             <a class="navbar-brand fw-bold text-primary" href="#home">
+            <!-- Ganti dengan aset logo Anda sendiri -->
+            <a class="navbar-brand fw-bold text-primary" href="#home">
                 <div class="logo-bulat">Logo</div>
-             </a>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -34,89 +36,90 @@
                         <a class="nav-link" href="#contact">Contact</a>
                     </li>
                 </ul>
+            </div>
         </div>
-     </nav>
+    </nav>
 
-     <!-- HERO SECTION -->
+    <!-- SECTION 1: HERO -->
     <section id="home" class="hero-section d-flex align-items-center bg-light" style="min-height: 100vh;">
         <div class="container text-center">
-            <h1 class="display-4 fw-bold">Selamat Datang di Website Kami</h1>
-            <p class="lead text-secondary mb-4">SLOGAN WEB</p>
-            <a href="#contact" class="btn btn-primary btn-lg rounded-pill px-4">Hubungi Kami</a>
+            <h1 class="display-4 fw-bold text-dark mb-3">Selamat Datang di Portofolio Saya</h1>
+            <p class="lead text-secondary mb-4">Saya seorang pengembang web yang berdedikasi membangun solusi digital inovatif.</p>
+            <a href="#contact" class="btn btn-primary btn-lg rounded-pill px-4">Mari Berdiskusi</a>
         </div>
     </section>
 
-    <!-- SERVICES SECTION -->
-    <section id="services" class="py-5 " style="margin-bottom: auto;background-color: #68abed; padding: 60px 0;">
+    <!-- SECTION 2: SERVICES / PORTOFOLIO (Target Database 1) -->
+    <section id="services" class="py-5 bg-white">
         <div class="container py-5">
             <div class="text-center mb-5">
-                <h2 class="fw-bold border-bottom border-primary border-3 d-inline-block pb-2">Services</h2>
-                <p class="text-muted mt-2">daftar pelayanan</p>
+                <h2 class="fw-bold border-bottom border-primary border-3 d-inline-block pb-2">Layanan & Portofolio</h2>
+                <p class="text-muted mt-2">Daftar layanan ini disiapkan untuk dipanggil secara dinamis dari Database.</p>
             </div>
-
-        <div class="row g-4">
-            <!--komponen perluangan-->
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm custom-card">
-                    <div class="card-body text-center p-4">
-                        <h4 class="card-title fw-bold mt-3">Web Dev</h4>
-                        <p class="card-text text-muted mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    </div>
-                </div>
             
-
+            <div class="row g-4">
+                <!-- Komponen Card ini nantinya akan berada di dalam perulangan (loop) PHP/Backend -->
                 <div class="col-md-4">
                     <div class="card h-100 border-0 shadow-sm custom-card">
                         <div class="card-body text-center p-4">
-                            <h4 class="card-title fw-bold mt-3">Web Design</h4>
-                            <p class="card-text text-muted mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <h4 class="card-title fw-bold mt-3">Web Development</h4>
+                            <p class="card-text text-muted mt-3">Pembuatan website dinamis dan responsif menggunakan teknologi terbaru.</p>
                         </div>
                     </div>
                 </div>
-
+                
                 <div class="col-md-4">
                     <div class="card h-100 border-0 shadow-sm custom-card">
                         <div class="card-body text-center p-4">
-                            <h4 class="card-title fw-bold mt-3">system analysis</h4>
-                            <p class="card-text text-muted mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <h4 class="card-title fw-bold mt-3">UI/UX Design</h4>
+                            <p class="card-text text-muted mt-3">Merancang antarmuka pengguna yang intuitif dan pengalaman pengguna yang optimal.</p>
                         </div>
                     </div>
                 </div>
+                
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm custom-card">
+                        <div class="card-body text-center p-4">
+                            <h4 class="card-title fw-bold mt-3">System Analysis</h4>
+                            <p class="card-text text-muted mt-3">Analisis kebutuhan sistem dengan pemodelan DFD dan Use Case.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Akhir dari area yang akan di-looping dari database -->
             </div>
         </div>
     </section>
 
-
-    <section id="about" class="py-5" style="margin-top: 400px; padding-top: 1px solid #dee2e6;">
+    <!-- SECTION 3: ABOUT -->
+    <section id="about" class="py-5 bg-light">
         <div class="container py-5">
             <div class="text-center mb-5">
-                <h2 class=" fw-bold border-bottom border-primary border-3 d-inline-block pb-2">About you</h2>
+                <h2 class="fw-bold border-bottom border-primary border-3 d-inline-block pb-2">Tentang Saya</h2>
             </div>
-        
+            
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0">
-                    <h3 class="fw-bold mb-3">Membangun sistem efisien</h3>
-                    <p class="text-muted text justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <h3 class="fw-bold mb-3">Membangun Sistem yang Efisien</h3>
+                    <p class="text-muted text-justify">Saya memiliki pengalaman dalam pemrograman, desain sistem, dan perhitungan teknis. Pendekatan saya selalu didasarkan pada objektivitas, analisis langkah demi langkah yang rinci, dan pemilihan solusi yang paling tepat guna.</p>
                 </div>
-
                 <div class="col-lg-6">
                     <!-- Progress bar menggunakan Bootstrap -->
                     <div class="mb-3">
-                        <span class="fw-bold d-block mb-1">Web Design</span>
-                        <div class ="progress" style="height: 20px;">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
-                        </div>
-                    </div>                
-                    <div class="mb-3">
-                        <span class="fw-bold d-block mb-1">Web Development</span>
-                        <div class ="progress" style="height: 20px;">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+                        <span class="fw-bold d-block mb-1">C# & C++</span>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
                     <div class="mb-3">
-                        <span class="fw-bold d-block mb-1">System Analysis</span>
-                        <div class ="progress" style="height: 20px;">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
+                        <span class="fw-bold d-block mb-1">HTML, CSS, Bootstrap</span>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <span class="fw-bold d-block mb-1">Sistem Analisis (DFD & UML)</span>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
                 </div>
@@ -125,7 +128,7 @@
     </section>
 
     <!-- SECTION 4: CONTACT (Target Database 2) -->
-    <section id="contact" class="py-5">
+    <section id="contact" class="py-5 bg-white">
         <div class="container py-5">
             <div class="text-center mb-5">
                 <h2 class="fw-bold border-bottom border-primary border-3 d-inline-block pb-2">Hubungi Saya</h2>
@@ -162,8 +165,11 @@
     <!-- FOOTER -->
     <footer class="bg-dark text-white text-center py-4">
         <div class="container">
-            <p class="mb-0">&copy; 2026 .  web test.</p>
+            <p class="mb-0">© 2026 Portofolio Saya. Dibuat dengan Bootstrap 5.</p>
         </div>
     </footer>
+
+    <!-- Ganti src dengan path file Bootstrap JS lokal Anda -->
+    <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

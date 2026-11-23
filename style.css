@@ -3,11 +3,6 @@ html {
     scroll-behavior: smooth;
 }
 
-.services {
-    background-color: #77b3ef; /* Warna latar belakang abu-abu terang */
-    padding: 60px 0;
-}
-
 /* Kustomisasi Logo Bulat pada Navbar */
 .logo-bulat {
     width: 45px;
@@ -29,16 +24,11 @@ html {
 
 .custom-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 .5rem 1rem red!important;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
     border-bottom: 4px solid #0d6efd !important;
 }
 
 /* Penyesuaian agar konten tidak tertutup fixed navbar saat di-scroll */
 section {
     scroll-margin-top: 70px;
-}
-
-.section-contact {
-    background-color: #4592df; /* Warna latar belakang abu-abu terang */
-    padding: 60px 0;
 }
