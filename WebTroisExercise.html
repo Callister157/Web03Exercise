@@ -1,175 +1,144 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Kreatif</title>
-    <!-- Ganti href dengan path file Bootstrap lokal Anda -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- CSS Kustom untuk kreativitas -->
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body data-bs-spy="scroll" data-bs-target="#navbarUtama" data-bs-offset="70" tabindex="0">
 
-    <!-- HEADER / NAVIGASI (Sticky Top) -->
-    <nav id="navbarUtama" class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
-        <div class="container">
-            <!-- Ganti dengan aset logo Anda sendiri -->
-            <a class="navbar-brand fw-bold text-primary" href="#home">
-                <div class="logo-bulat">Logo</div>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#services">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="style.css">
 
-    <!-- SECTION 1: HERO -->
-    <section id="home" class="hero-section d-flex align-items-center bg-light" style="min-height: 100vh;">
-        <div class="container text-center">
-            <h1 class="display-4 fw-bold text-dark mb-3">Selamat Datang di Portofolio Saya</h1>
-            <p class="lead text-secondary mb-4">Saya seorang pengembang web yang berdedikasi membangun solusi digital inovatif.</p>
-            <a href="#contact" class="btn btn-primary btn-lg rounded-pill px-4">Mari Berdiskusi</a>
-        </div>
-    </section>
+<body>
 
-    <!-- SECTION 2: SERVICES / PORTOFOLIO (Target Database 1) -->
-    <section id="services" class="py-5 bg-white">
-        <div class="container py-5">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold border-bottom border-primary border-3 d-inline-block pb-2">Layanan & Portofolio</h2>
-                <p class="text-muted mt-2">Daftar layanan ini disiapkan untuk dipanggil secara dinamis dari Database.</p>
+    <div class="main-wrapper mx-auto">
+        
+        <!-- 1. HEADER -->
+        <header class="header-section d-flex justify-content-between align-items-end px-4 px-md-5 py-3">
+            <div class="logo-circle d-flex align-items-center justify-content-center bg-white">
+                Logo
             </div>
-            
-            <div class="row g-4">
-                <!-- Komponen Card ini nantinya akan berada di dalam perulangan (loop) PHP/Backend -->
-                <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-sm custom-card">
-                        <div class="card-body text-center p-4">
-                            <h4 class="card-title fw-bold mt-3">Web Development</h4>
-                            <p class="card-text text-muted mt-3">Pembuatan website dinamis dan responsif menggunakan teknologi terbaru.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-sm custom-card">
-                        <div class="card-body text-center p-4">
-                            <h4 class="card-title fw-bold mt-3">UI/UX Design</h4>
-                            <p class="card-text text-muted mt-3">Merancang antarmuka pengguna yang intuitif dan pengalaman pengguna yang optimal.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-sm custom-card">
-                        <div class="card-body text-center p-4">
-                            <h4 class="card-title fw-bold mt-3">System Analysis</h4>
-                            <p class="card-text text-muted mt-3">Analisis kebutuhan sistem dengan pemodelan DFD dan Use Case.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Akhir dari area yang akan di-looping dari database -->
-            </div>
-        </div>
-    </section>
+            <nav class="nav-menu d-flex gap-3 gap-md-4 pb-1">
+                <a href="#home" class="text-dark text-decoration-none">Home</a>
+                <a href="#services" class="text-dark text-decoration-none">Services</a>
+                <a href="#about" class="text-dark text-decoration-none">About</a>
+                <a href="#contact" class="text-dark text-decoration-none">Contact</a>
+            </nav>
+        </header>
 
-    <!-- SECTION 3: ABOUT -->
-    <section id="about" class="py-5 bg-light">
-        <div class="container py-5">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold border-bottom border-primary border-3 d-inline-block pb-2">Tentang Saya</h2>
-            </div>
-            
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <h3 class="fw-bold mb-3">Membangun Sistem yang Efisien</h3>
-                    <p class="text-muted text-justify">Saya memiliki pengalaman dalam pemrograman, desain sistem, dan perhitungan teknis. Pendekatan saya selalu didasarkan pada objektivitas, analisis langkah demi langkah yang rinci, dan pemilihan solusi yang paling tepat guna.</p>
+        <!-- 2. HERO SECTION -->
+        <section id="home" class="hero-section d-flex align-items-center justify-content-center text-center px-3">
+            <p class="m-0 text-dark">Hero (Image, Slogan, Kontak, dll)</p>
+        </section>
+
+   
+        <!-- 3. SERVICES SECTION -->
+        <section id="services" class="services-section py-5 px-4 px-md-5">
+            <div class="d-flex justify-content-center mb-5">
+                <div class="title-box bg-white d-flex align-items-center justify-content-center">
+                    Services
                 </div>
-                <div class="col-lg-6">
-                    <!-- Progress bar menggunakan Bootstrap -->
-                    <div class="mb-3">
-                        <span class="fw-bold d-block mb-1">C# & C++</span>
-                        <div class="progress" style="height: 10px;">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
+            </div>
+
+            <div class="row g-4 px-md-4">
+                <div class="col-4">
+                    <h3 class="fw-bold mb-3">Heading</h3>
+                        <p class="lh-sm">
+                            Lorem ipsum dolor<br>
+                            sit amet,<br>
+                            consectetur<br>
+                            adipisicing elit, sed
+                        </p>
+                </div>
+                <div class="col-4">
+                    <h3 class="fw-bold mb-3">Heading</h3>
+                        <p class="lh-sm">
+                            Lorem ipsum dolor<br>
+                            sit amet,<br>
+                            consectetur<br>
+                            adipisicing elit, sed
+                        </p>
+                </div>
+                <div class="col-4">
+                    <h3 class="fw-bold mb-3">Heading</h3>
+                        <p class="lh-sm">
+                        Lorem ipsum dolor<br>
+                        sit amet,<br>
+                        consectetur<br>
+                        adipisicing elit, sed
+                        </p>
+                </div>
+            </div>
+        </section>
+
+       <!-- 4. ABOUT SECTION -->
+        <section id="about" class="about-section py-5 px-4 px-md-5">
+            <div class="d-flex justify-content-center mb-4">
+                <div class="title-box bg-white d-flex align-items-center justify-content-center">
+                    About
+                </div>
+            </div>
+
+            <div class="px-md-4 mb-4">
+                <p class="text-dark mb-4">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                </p>
+
+                <div class="row g-4 align-items-start">
+                    <!-- Ubah col-md-6 menjadi col-6 agar selalu sejajar kiri & kanan -->
+                    <div class="col-6">
+                        <h3 class="fw-bold mb-3">Heading</h3>
+                        <p class="text-dark lh-sm">
+                            Lorem ipsum dolor sit amet,<br>
+                            consectetur adipisicing elit, sed<br>
+                            do eiusmod tempor incididunt ut<br>
+                            labore et dolore magna aliqua.
+                        </p>
                     </div>
-                    <div class="mb-3">
-                        <span class="fw-bold d-block mb-1">HTML, CSS, Bootstrap</span>
-                        <div class="progress" style="height: 10px;">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <span class="fw-bold d-block mb-1">Sistem Analisis (DFD & UML)</span>
-                        <div class="progress" style="height: 10px;">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
+                    <div class="col-6">
+                        <h3 class="fw-bold mb-3">Performance</h3>
+                        <svg viewBox="0 0 260 95" class="wave-svg" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 5 22 Q 70 48, 130 22 T 255 22 L 255 68 Q 190 42, 130 68 T 5 68 Z" 
+                                  fill="#ffffff" 
+                                  stroke="#000000" 
+                                  stroke-width="1.5" />
+                        </svg>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- SECTION 4: CONTACT (Target Database 2) -->
-    <section id="contact" class="py-5 bg-white">
-        <div class="container py-5">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold border-bottom border-primary border-3 d-inline-block pb-2">Hubungi Saya</h2>
-                <p class="text-muted mt-2">Formulir ini disiapkan untuk mengirim data masukkan pengguna (POST) ke Database.</p>
-            </div>
-            
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <!-- Form disiapkan dengan method POST -->
-                    <form action="proses_pesan.php" method="POST" class="bg-light p-4 p-md-5 rounded shadow-sm">
-                        <div class="row g-3 mb-3">
-                            <div class="col-md-6">
-                                <label for="namaLengkap" class="form-label fw-bold">Nama Lengkap</label>
-                                <input type="text" class="form-control form-control-lg" id="namaLengkap" name="namaLengkap" placeholder="Masukkan nama" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="alamatEmail" class="form-label fw-bold">Email</label>
-                                <input type="email" class="form-control form-control-lg" id="alamatEmail" name="alamatEmail" placeholder="nama@email.com" required>
-                            </div>
-                        </div>
-                        <div class="mb-4">
-                            <label for="isiPesan" class="form-label fw-bold">Pesan Anda</label>
-                            <textarea class="form-control form-control-lg" id="isiPesan" name="isiPesan" rows="5" placeholder="Tuliskan pesan Anda di sini..." required></textarea>
-                        </div>
-                        <div class="d-grid">
-                            <button type="submit" class="btn btn-primary btn-lg rounded-3">Kirim Pesan</button>
-                        </div>
-                    </form>
+        <!-- 5. CONTACT SECTION -->
+        <section id="contact" class="contact-section py-4 px-4 px-md-5">
+            <div class="d-flex justify-content-center mb-4">
+                <div class="title-box-contact bg-white d-flex align-items-center justify-content-center">
+                    Contact
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-dark text-white text-center py-4">
-        <div class="container">
-            <p class="mb-0">© 2026 Portofolio Saya. Dibuat dengan Bootstrap 5.</p>
-        </div>
-    </footer>
+            <form class="px-md-3">
+                <div class="row g-4 mb-3">
+                    <div class="col-6">
+                        <input type="text" class="form-control custom-input" aria-label="Input Kiri">
+                    </div>
+                    <div class="col-6">
+                        <input type="text" class="form-control custom-input" aria-label="Input Kanan">
+                    </div>
+                </div>
 
-    <!-- Ganti src dengan path file Bootstrap JS lokal Anda -->
+                <div class="mb-3">
+                    <textarea class="form-control custom-textarea" rows="4" aria-label="Pesan"></textarea>
+                </div>
+
+                <div>
+                    <button type="submit" class="btn btn-kirim text-white fw-bold">Kirim</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- 6. FOOTER -->
+        <footer class="footer-section d-flex align-items-center justify-content-center py-3">
+            <span class="text-dark">Footer</span>
+        </footer>
+
+    </div>
+
+    <!-- Panggil Bootstrap 5 JS dari folder lokal Anda -->
     <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,34 +1,166 @@
-/* Mengaktifkan scroll halus antar seksi */
+
+:root {
+    color-scheme: light only;
+}
+
+.services-section h3,
+.services-section p,
+.about-section h3,
+.about-section p,
+.title-box {
+    color: #000000 !important;
+}
+
 html {
     scroll-behavior: smooth;
 }
 
-/* Kustomisasi Logo Bulat pada Navbar */
-.logo-bulat {
-    width: 45px;
-    height: 45px;
-    border: 2px solid #0d6efd; /* Warna biru primary Bootstrap */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Pembungkus utama agar proporsinya presisi seperti wireframe */
+.main-wrapper {
+    max-width: 720px;
+    width: 100%;
+    border-left: 1px solid #d4a359;
+    border-right: 1px solid #d4a359;
+}
+
+/* 1. Header */
+.header-section {
+    background-color: #ffe5c4; /* Oranye/peach muda */
+    border-top: 1px solid #d4a359;
+    border-bottom: 1px solid #4a86e8;
+    min-height: 110px;
+}
+
+.logo-circle {
+    width: 78px;
+    height: 78px;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    color: #0d6efd;
-    transition: all 0.3s ease;
+    border: 1.5px solid #8e3535;
+    font-size: 14px;
+    color: #926c6c;
 }
 
-/* Menambahkan efek hover kreatif pada Card Services */
-.custom-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.nav-menu a {
+    font-size: 14px;
 }
 
-.custom-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
-    border-bottom: 4px solid #0d6efd !important;
+.nav-menu a:hover {
+    text-decoration: underline !important;
 }
 
-/* Penyesuaian agar konten tidak tertutup fixed navbar saat di-scroll */
-section {
-    scroll-margin-top: 70px;
+/* 2. Hero Section */
+.hero-section {
+    background-color: #dae8fc; /* Biru muda */
+    border-bottom: 1px solid #d6b656;
+    height: 270px;
+    font-size: 14px;
+}
+
+/* Kotak Judul (Services, About, Contact) */
+.title-box {
+    width: 140px;
+    height: 70px;
+    border: 1.2px solid #509754;
+    border-radius: 12px;
+    font-size: 14px;
+    color: #257d6c;
+}
+
+.title-box-contact {
+    width: 155px;
+    height: 72px;
+    border: 1.2px solid #457987;
+    border-radius: 12px;
+    font-size: 14px;
+    color: #4abace;
+}
+
+/* 3. Services Section */
+.services-section {
+    background-color: #fff2cc; /* Kuning muda */
+    border-bottom: 1px solid #9673a6;
+}
+
+.services-section h3,
+.about-section h3 {
+    font-size: 24px;
+    color: #d1a6a6;
+}
+
+.services-section p,
+.about-section p {
+    font-size: 14px;
+}
+
+/* 4. About Section */
+.about-section {
+    background-color: #e1d5e7; /* Ungu muda */
+    border-bottom: 1px solid #82b366;
+}
+
+.wave-svg {
+    width: 100%;
+    max-width: 240px;
+    height: auto;
+    display: block;
+}
+
+/* 5. Contact Section */
+.contact-section {
+    background-color: #d5e8d4; /* Hijau muda */
+    border-bottom: 1px solid #d4a359;
+}
+
+.custom-input {
+    height: 28px;
+    border: 1.2px solid #be9d9d;
+    border-radius: 4px;
+    background-color: #ffffff;
+    padding: 2px 8px;
+    font-size: 14px;
+}
+
+.custom-textarea {
+    height: 92px;
+    border: 1.2px solid #391414;
+    border-radius: 10px;
+    background-color: #ffffff;
+    resize: none;
+    font-size: 14px;
+}
+
+.custom-input:focus,
+.custom-textarea:focus {
+    border-color: #641818;
+    box-shadow: none;
+}
+
+.btn-kirim {
+    background-color: #0044ff;
+    border: 1px solid #002db3;
+    border-radius: 4px;
+    width: 145px;
+    height: 28px;
+    padding: 0;
+    font-size: 13px;
+    line-height: 26px;
+}
+
+.btn-kirim:hover {
+    background-color: #0035cc;
+}
+
+/* 6. Footer */
+.footer-section {
+    background-color: #ffe5c4; /* Oranye/peach muda */
+    border-bottom: 1px solid #d4a359;
+    min-height: 60px;
+    font-size: 14px;
 }
