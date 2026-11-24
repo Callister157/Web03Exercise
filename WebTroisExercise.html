@@ -1,484 +1,462 @@
 <!DOCTYPE html>
 <html lang="id" data-bs-theme="light">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="color-scheme" content="light only">
-        <title>Web Wireframe Presisi - Bootstrap 5 & Chart.js</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light only">
+    <title>Web Wireframe Presisi - Bootstrap 5 & Chart.js</title>
+    
+    <!-- 1. PERBAIKAN PATH CSS BOOTSTRAP -->
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
+
+    <style>
+        :root {
+            color-scheme: light only;
+        }
+
+        /* 2. PERBAIKAN SINTAKS SELECTOR UNIVERSAL (*) */
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        .main-wrapper {
+            max-width: 720px;
+            width: 100%;
+            border-left: 1px solid #d4a359;
+            border-right: 1px solid #d4a359;
+        }
+
+        /* 1. Header */
+        .header-section {
+            background-color: #ffe5c4;
+            border-top: 1px solid #d4a359;
+            border-bottom: 1px solid #4a86e8;
+            min-height: 110px;
+            z-index: 1020;
+        }
+
+        .logo-circle {
+            width: 78px;
+            height: 78px;
+            border-radius: 50%;
+            border: 1.5px solid #000000;
+            font-size: 14px;
+            color: #000000;
+        }
+
+        /* Menu Active */
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+            padding-bottom: 4px;
+        }
+
+        .nav-menu .nav-link {
+            font-size: 14px;
+            color: #000000 !important;
+            text-decoration: none;
+            padding-bottom: 4px !important;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .nav-menu .nav-link:hover {
+            border-bottom: 2px solid #555555;
+        }
+
+        .nav-menu .nav-link.active {
+            font-weight: bold;
+            color: #0044ff !important;
+            border-bottom: 2px solid #0044ff;
+        }
+
+        /* 2. Hero Section */
+        .hero-section {
+            background-color: #dae8fc;
+            border-bottom: 1px solid #d6b656;
+            height: 270px;
+            font-size: 14px;
+        }
+
+        /* Kotak Judul */
+        .title-box {
+            width: 140px;
+            height: 70px;
+            border: 1.2px solid #000000;
+            border-radius: 12px;
+            font-size: 14px;
+            color: #000000 !important;
+        }
+
+        .title-box-contact {
+            width: 155px;
+            height: 72px;
+            border: 1.2px solid #000000;
+            border-radius: 12px;
+            font-size: 14px;
+            color: #000000 !important;
+        }
+
+        /* 3. Services Section */
+        .services-section {
+            background-color: #fff2cc;
+            border-bottom: 1px solid #9673a6;
+        }
+
+        .services-section h3,
+        .about-section h3 {
+            font-size: 24px;
+            margin-top: 0;
+            color: #000000 !important;
+        }
+
+        .services-section p,
+        .about-section p {
+            font-size: 14px;
+            line-height: 1.35;
+            color: #000000 !important;
+        }
+
+        /* 4. About Section & Chart.js */
+        .about-section {
+            background-color: #e1d5e7;
+            border-bottom: 1px solid #82b366;
+        }
+
+        .chart-container {
+            width: 100%;
+            height: 130px;
+            border: 1.5px solid #000000;
+            border-radius: 6px;
+            padding: 8px;
+        }
+
+        /* 5. Contact Section */
+        .contact-section {
+            background-color: #d5e8d4;
+            border-bottom: 1px solid #d4a359;
+        }
+
+        .custom-input {
+            width: 100%;
+            height: 28px;
+            border: 1.2px solid #000000;
+            border-radius: 4px;
+            background-color: #ffffff;
+            padding: 2px 8px;
+            font-size: 14px;
+        }
+
+        .custom-textarea {
+            width: 100%;
+            height: 92px;
+            border: 1.2px solid #000000;
+            border-radius: 10px;
+            background-color: #ffffff;
+            padding: 8px;
+            resize: none;
+            font-size: 14px;
+        }
+
+        .custom-input:focus,
+        .custom-textarea:focus {
+            outline: none;
+            border-color: #000000;
+            box-shadow: none;
+        }
+
+        .btn-kirim {
+            background-color: #0044ff;
+            color: #ffffff;
+            border: 1px solid #002db3;
+            border-radius: 4px;
+            width: 145px;
+            height: 28px;
+            padding: 0;
+            font-size: 13px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .btn-kirim:hover {
+            background-color: #0035cc;
+        }
+
+        /* 6. Footer */
+        .footer-section {
+            background-color: #ffe5c4;
+            border-bottom: 1px solid #d4a359;
+            min-height: 60px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="120" tabindex="0">
+
+    <div class="main-wrapper mx-auto">
         
-        <!-- Sesuaikan href dengan fold er Bootstrap lokal Anda (misal: bootstrap-5.3.3-dist/css/bootstrap.min.css) -->
-        <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
+        <!-- 1. HEADER -->
+        <header id="topHeader" class="header-section sticky-top d-flex justify-content-between align-items-end px-4 py-3">
+            <div class="logo-circle d-flex align-items-center justify-content-center bg-white">
+                Logo
+            </div>
+            <nav id="mainNav" class="nav nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+        </header>
 
-        <style>
-            :root {
-                color-scheme: light only;
-            }
-
-            * {
-                box-sizing: border-box;
-            }
-
-            html {
-                scroll-behavior: smooth;
-            }
-
-            body {
-                font-family: Arial, Helvetica, sans-serif;
-                background-color: #ffffff;
-                margin: 0;
-                padding: 0;
-                position: relative;
-            }
-
-            /* Fallback kelas Bootstrap agar tata letak tetap 100% presisi */
-            .mx-auto { margin-left: auto !important; margin-right: auto !important; }
-            .d-flex { display: flex !important; }
-            .justify-content-between { justify-content: space-between !important; }
-            .justify-content-center { justify-content: center !important; }
-            .align-items-end { align-items: flex-end !important; }
-            .align-items-center { align-items: center !important; }
-            .align-items-start { align-items: flex-start !important; }
-            .text-center { text-align: center !important; }
-            .fw-bold { font-weight: bold !important; }
-            .bg-white { background-color: #ffffff !important; }
-            .sticky-top { position: sticky; top: 0; }
-            .row { display: flex !important; flex-wrap: wrap !important; margin-left: -12px; margin-right: -12px; }
-            .col-4 { width: 33.333333% !important; padding-left: 12px; padding-right: 12px; }
-            .col-6 { width: 50% !important; padding-left: 12px; padding-right: 12px; }
-            .mb-3 { margin-bottom: 1rem !important; }
-            .mb-4 { margin-bottom: 1.5rem !important; }
-            .mb-5 { margin-bottom: 3rem !important; }
-            .py-3 { padding-top: 1rem !important; padding-bottom: 1rem !important; }
-            .py-4 { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
-            .py-5 { padding-top: 3rem !important; padding-bottom: 3rem !important; }
-            .px-4 { padding-left: 2.5rem !important; padding-right: 2.5rem !important; }
-
-            .main-wrapper {
-                max-width: 720px;
-                width: 100%;
-                border-left: 1px solid #d4a359;
-                border-right: 1px solid #d4a359;
-            }
-
-            /* 1. Header */
-            .header-section {
-                background-color: #ffe5c4;
-                border-top: 1px solid #d4a359;
-                border-bottom: 1px solid #4a86e8;
-                min-height: 110px;
-                z-index: 1020;
-            }
-
-            .logo-circle {
-                width: 78px;
-                height: 78px;
-                border-radius: 50%;
-                border: 1.5px solid #000000;
-                font-size: 14px;
-                color: #000000;
-            }
-
-            /* Menu Active */
-            .nav-menu {
-                display: flex;
-                gap: 20px;
-                padding-bottom: 4px;
-            }
-
-            .nav-menu .nav-link {
-                font-size: 14px;
-                color: #000000 !important;
-                text-decoration: none;
-                padding-bottom: 4px !important;
-                border-bottom: 2px solid transparent;
-                transition: all 0.2s ease;
-            }
-
-            .nav-menu .nav-link:hover {
-                border-bottom: 2px solid #555555;
-            }
-
-            .nav-menu .nav-link.active {
-                font-weight: bold;
-                color: #0044ff !important;
-                border-bottom: 2px solid #0044ff;
-            }
-
-            /* 2. Hero Section */
-            .hero-section {
-                background-color: #dae8fc;
-                border-bottom: 1px solid #d6b656;
-                height: 270px;
-                font-size: 14px;
-            }
-
-            /* Kotak Judul */
-            .title-box {
-                width: 140px;
-                height: 70px;
-                border: 1.2px solid #000000;
-                border-radius: 12px;
-                font-size: 14px;
-                color: #000000 !important;
-            }
-
-            .title-box-contact {
-                width: 155px;
-                height: 72px;
-                border: 1.2px solid #000000;
-                border-radius: 12px;
-                font-size: 14px;
-                color: #000000 !important;
-            }
-
-            /* 3. Services Section */
-            .services-section {
-                background-color: #fff2cc;
-                border-bottom: 1px solid #9673a6;
-            }
-
-            .services-section h3,
-            .about-section h3 {
-                font-size: 24px;
-                margin-top: 0;
-                color: #000000 !important;
-            }
-
-            .services-section p,
-            .about-section p {
-                font-size: 14px;
-                line-height: 1.35;
-                color: #000000 !important;
-            }
-
-            /* 4. About Section & Chart.js */
-            .about-section {
-                background-color: #e1d5e7;
-                border-bottom: 1px solid #82b366;
-            }
-
-            .chart-container {
-                width: 100%;
-                height: 130px;
-                border: 1.5px solid #000000;
-                border-radius: 6px;
-                padding: 8px;
-            }
-
-            /* 5. Contact Section */
-            .contact-section {
-                background-color: #d5e8d4;
-                border-bottom: 1px solid #d4a359;
-            }
-
-            .custom-input {
-                width: 100%;
-                height: 28px;
-                border: 1.2px solid #000000;
-                border-radius: 4px;
-                background-color: #ffffff;
-                padding: 2px 8px;
-                font-size: 14px;
-            }
-
-            .custom-textarea {
-                width: 100%;
-                height: 92px;
-                border: 1.2px solid #000000;
-                border-radius: 10px;
-                background-color: #ffffff;
-                padding: 8px;
-                resize: none;
-                font-size: 14px;
-            }
-
-            .custom-input:focus,
-            .custom-textarea:focus {
-                outline: none;
-                border-color: #000000;
-                box-shadow: none;
-            }
-
-            .btn-kirim {
-                background-color: #0044ff;
-                color: #ffffff;
-                border: 1px solid #002db3;
-                border-radius: 4px;
-                width: 145px;
-                height: 28px;
-                padding: 0;
-                font-size: 13px;
-                font-weight: bold;
-                cursor: pointer;
-            }
-
-            .btn-kirim:hover {
-                background-color: #0035cc;
-            }
-
-            /* 6. Footer */
-            .footer-section {
-                background-color: #ffe5c4;
-                border-bottom: 1px solid #d4a359;
-                min-height: 60px;
-                font-size: 14px;
-            }
-        </style>
-    </head>
-
-    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
-
-    <body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="120" tabindex="0">
-
-        <div class="main-wrapper mx-auto">
-            
-            <!-- 1. HEADER -->
-            <header id="topHeader" class="header-section sticky-top d-flex justify-content-between align-items-end px-4 py-3">
-                <div class="logo-circle d-flex align-items-center justify-content-center bg-white">
-                    Logo
+        <!-- 2. HERO SECTION DENGAN CAROUSEL -->
+        <section id="home" class="hero-section p-0 overflow-hidden">
+            <div id="heroCarousel" class="carousel slide h-100" data-bs-ride="carousel">
+                
+                <!-- Indikator Bawah -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
                 </div>
-                <nav id="mainNav" class="nav nav-menu">
-                    <a href="#home" class="nav-link active">Home</a>
-                    <a href="#services" class="nav-link">Services</a>
-                    <a href="#about" class="nav-link">About</a>
-                    <a href="#contact" class="nav-link">Contact</a>
-                </nav>
-            </header>
 
-            <!-- 2. HERO SECTION DENGAN CAROUSEL -->
-            <section id="home" class="hero-section p-0 overflow-hidden">
-                <div id="heroCarousel" class="carousel slide h-100" data-bs-ride="carousel">
-                    
-                    <!-- Indikator Bawah -->
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
-                        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
-                        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
-                    </div>
-
-                    <!-- Daftar Slide -->
-                    <div class="carousel-inner h-100">
-                        <div class="carousel-item active h-100">
-                            <img src="bootstrap-5.3.3-dist/img/slide1.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Slide 1">
-                            <div class="carousel-caption d-block">
-                                <p class="m-0 bg-dark bg-opacity-50 px-2 py-1 rounded d-inline-block text-white">Hero (Image, Slogan, Kontak, dll)</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item h-100">
-                            <img src="bootstrap-5.3.3-dist/img/slide2.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Slide 2">
-                        </div>
-                        <div class="carousel-item h-100">
-                            <img src="bootstrap-5.3.3-dist/img/slide3.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Slide 3">
+                <!-- 3. PERBAIKAN PATH GAMBAR SLIDE SESUAI EXPLORER -->
+                <div class="carousel-inner h-100">
+                    <div class="carousel-item active h-100">
+                        <img src="bootstrap-5.3.3-dist/img/slide1.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Slide 1">
+                        <div class="carousel-caption d-block">
+                            <p class="m-0 bg-dark bg-opacity-50 px-2 py-1 rounded d-inline-block text-white">Hero (Image, Slogan, Kontak, dll)</p>
                         </div>
                     </div>
-
-                    <!-- Tombol Kontrol Kiri & Kanan -->
-                    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </button>
-
-                </div>
-            </section>
-
-            <!-- 3. SERVICES SECTION -->
-            <section id="services" class="services-section py-5 px-4">
-                <div class="d-flex justify-content-center mb-5">
-                    <div class="title-box bg-white p-0 overflow-hidden">
-                        Services
+                    <div class="carousel-item h-100">
+                        <img src="bootstrap-5.3.3-dist/img/slide2.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Slide 2">
+                    </div>
+                    <div class="carousel-item h-100">
+                        <img src="bootstrap-5.3.3-dist/img/slide3.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Slide 3">
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-4">
+                <!-- Tombol Kontrol Kiri & Kanan -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+
+            </div>
+        </section>
+
+        <!-- 3. SERVICES SECTION -->
+        <section id="services" class="services-section py-5 px-4">
+            <div class="d-flex justify-content-center mb-5">
+                <!-- 5. PERBAIKAN ALIGNMENT KOTAK JUDUL SERVICES -->
+                <div class="title-box bg-white d-flex align-items-center justify-content-center">
+                    Services
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4">
+                    <h3 class="fw-bold mb-3">Heading</h3>
+                    <p>
+                        Lorem ipsum dolor<br>
+                        sit amet,<br>
+                        consectetur<br>
+                        adipisicing elit, sed
+                    </p>
+                </div>
+                <div class="col-4">
+                    <h3 class="fw-bold mb-3">Heading</h3>
+                    <p>
+                        Lorem ipsum dolor<br>
+                        sit amet,<br>
+                        consectetur<br>
+                        adipisicing elit, sed
+                    </p>
+                </div>
+                <div class="col-4">
+                    <h3 class="fw-bold mb-3">Heading</h3>
+                    <p>
+                        Lorem ipsum dolor<br>
+                        sit amet,<br>
+                        consectetur<br>
+                        adipisicing elit, sed
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. ABOUT SECTION -->
+        <section id="about" class="about-section py-5 px-4">
+            <div class="d-flex justify-content-center mb-4">
+                <div class="title-box bg-white d-flex align-items-center justify-content-center">
+                    About
+                </div>
+            </div>
+
+            <div>
+                <p class="mb-4">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                </p>
+
+                <div class="row align-items-start">
+                    <div class="col-6">
                         <h3 class="fw-bold mb-3">Heading</h3>
                         <p>
-                            Lorem ipsum dolor<br>
-                            sit amet,<br>
-                            consectetur<br>
-                            adipisicing elit, sed
+                            Lorem ipsum dolor sit amet,<br>
+                            consectetur adipisicing elit, sed<br>
+                            do eiusmod tempor incididunt ut<br>
+                            labore et dolore magna aliqua.
                         </p>
                     </div>
-                    <div class="col-4">
-                        <h3 class="fw-bold mb-3">Heading</h3>
-                        <p>
-                            Lorem ipsum dolor<br>
-                            sit amet,<br>
-                            consectetur<br>
-                            adipisicing elit, sed
-                        </p>
-                    </div>
-                    <div class="col-4">
-                        <h3 class="fw-bold mb-3">Heading</h3>
-                        <p>
-                            Lorem ipsum dolor<br>
-                            sit amet,<br>
-                            consectetur<br>
-                            adipisicing elit, sed
-                        </p>
+                    <div class="col-6">
+                        <h3 class="fw-bold mb-3">Performance</h3>
+                        <div class="chart-container bg-white">
+                            <canvas id="performanceChart"></canvas>
+                        </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- 4. ABOUT SECTION -->
-            <section id="about" class="about-section py-5 px-4">
-                <div class="d-flex justify-content-center mb-4">
-                    <div class="title-box bg-white d-flex align-items-center justify-content-center">
-                        About
+        <!-- 5. CONTACT SECTION -->
+        <section id="contact" class="contact-section py-4 px-4">
+            <div class="d-flex justify-content-center mb-4">
+                <div class="title-box-contact bg-white d-flex align-items-center justify-content-center">
+                    Contact
+                </div>
+            </div>
+
+            <form>
+                <div class="row mb-3">
+                    <div class="col-6">
+                        <input type="text" class="form-control custom-input" aria-label="Input Kiri">
                     </div>
+                    <div class="col-6">
+                        <input type="text" class="form-control custom-input" aria-label="Input Kanan">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <textarea class="form-control custom-textarea" rows="4" aria-label="Pesan"></textarea>
                 </div>
 
                 <div>
-                    <p class="mb-4">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    </p>
-
-                    <div class="row align-items-start">
-                        <div class="col-6">
-                            <h3 class="fw-bold mb-3">Heading</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet,<br>
-                                consectetur adipisicing elit, sed<br>
-                                do eiusmod tempor incididunt ut<br>
-                                labore et dolore magna aliqua.
-                            </p>
-                        </div>
-                        <div class="col-6">
-                            <h3 class="fw-bold mb-3">Performance</h3>
-                            <div class="chart-container bg-white">
-                                <canvas id="performanceChart"></canvas>
-                            </div>
-                        </div>
-                    </div>
+                    <button type="submit" class="btn btn-kirim">Kirim</button>
                 </div>
-            </section>
+            </form>
+        </section>
 
-            <!-- 5. CONTACT SECTION -->
-            <section id="contact" class="contact-section py-4 px-4">
-                <div class="d-flex justify-content-center mb-4">
-                    <div class="title-box-contact bg-white d-flex align-items-center justify-content-center">
-                        Contact
-                    </div>
-                </div>
+        <!-- 6. FOOTER -->
+        <footer class="footer-section d-flex align-items-center justify-content-center py-3">
+            <span style="color: #000000;">Footer</span>
+        </footer>
 
-                <form>
-                    <div class="row mb-3">
-                        <div class="col-6">
-                            <input type="text" class="form-control custom-input" aria-label="Input Kiri">
-                        </div>
-                        <div class="col-6">
-                            <input type="text" class="form-control custom-input" aria-label="Input Kanan">
-                        </div>
-                    </div>
+    </div>
 
-                    <div class="mb-3">
-                        <textarea class="form-control custom-textarea" rows="4" aria-label="Pesan"></textarea>
-                    </div>
+    <!-- 4. PENEMPATAN SCRIPT BOOTSTRAP DI AKHIR BODY -->
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-                    <div>
-                        <button type="submit" class="btn btn-kirim">Kirim</button>
-                    </div>
-                </form>
-            </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const navLinks = document.querySelectorAll("#mainNav .nav-link");
+            const header = document.getElementById("topHeader");
+            const sections = document.querySelectorAll("section[id]");
 
-            <!-- 6. FOOTER -->
-            <footer class="footer-section d-flex align-items-center justify-content-center py-3">
-                <span style="color: #000000;">Footer</span>
-            </footer>
+            // 1. Autoscroll halus + menu active saat diklik
+            navLinks.forEach(link => {
+                link.addEventListener("click", function (e) {
+                    e.preventDefault();
 
-        </div>
+                    navLinks.forEach(item => item.classList.remove("active"));
+                    this.classList.add("active");
 
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                const navLinks = document.querySelectorAll("#mainNav .nav-link");
-                const header = document.getElementById("topHeader");
-                const sections = document.querySelectorAll("section[id]");
+                    const targetId = this.getAttribute("href");
+                    const targetSection = document.querySelector(targetId);
 
-                // 1. Autoscroll halus + menu active saat diklik
-                navLinks.forEach(link => {
-                    link.addEventListener("click", function (e) {
-                        e.preventDefault();
+                    if (targetSection) {
+                        const headerHeight = header.offsetHeight;
+                        const targetPosition = targetSection.getBoundingClientRect().top + window.scrollY - headerHeight;
 
-                        navLinks.forEach(item => item.classList.remove("active"));
-                        this.classList.add("active");
-
-                        const targetId = this.getAttribute("href");
-                        const targetSection = document.querySelector(targetId);
-
-                        if (targetSection) {
-                            const headerHeight = header.offsetHeight;
-                            const targetPosition = targetSection.getBoundingClientRect().top + window.scrollY - headerHeight;
-
-                            window.scrollTo({
-                                top: targetPosition,
-                                behavior: "smooth"
-                            });
-                        }
-                    });
-                });
-
-                // 2. Sinkronisasi menu active otomatis saat halaman di-scroll manual
-                window.addEventListener("scroll", function () {
-                    const scrollPos = window.scrollY + header.offsetHeight + 40;
-                    sections.forEach(sec => {
-                        const top = sec.offsetTop;
-                        const height = sec.offsetHeight;
-                        const id = sec.getAttribute("id");
-                        if (scrollPos >= top && scrollPos < top + height) {
-                            navLinks.forEach(link => {
-                                link.classList.remove("active");
-                                if (link.getAttribute("href") === "#" + id) {
-                                    link.classList.add("active");
-                                }
-                            });
-                        }
-                    });
-                });
-
-                // 3. Grafik Chart.js pada section About
-                const ctx = document.getElementById("performanceChart").getContext("2d");
-                new Chart(ctx, {
-                    type: "line",
-                    data: {
-                        labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun"],
-                        datasets: [{
-                            label: "Performa (%)",
-                            data: [65, 72, 70, 84, 89, 95],
-                            borderColor: "#0044ff",
-                            backgroundColor: "rgba(0, 68, 255, 0.15)",
-                            borderWidth: 2,
-                            tension: 0.4,
-                            fill: true,
-                            pointRadius: 3,
-                            pointBackgroundColor: "#000000"
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: { display: false }
-                        },
-                        scales: {
-                            x: {
-                                grid: { display: false },
-                                ticks: { color: "#000000", font: { size: 10 } }
-                            },
-                            y: {
-                                beginAtZero: true,
-                                max: 100,
-                                ticks: { color: "#000000", font: { size: 10 }, stepSize: 25 }
-                            }
-                        }
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: "smooth"
+                        });
                     }
                 });
             });
-        </script>
-        <!-- Chart.js -->
-        <script src="https://cdn.jsdelivr.net/npm/chart.js">
-        </script>
 
-    </body>
+            // 2. Sinkronisasi menu active otomatis saat halaman di-scroll manual
+            window.addEventListener("scroll", function () {
+                const scrollPos = window.scrollY + header.offsetHeight + 40;
+                sections.forEach(sec => {
+                    const top = sec.offsetTop;
+                    const height = sec.offsetHeight;
+                    const id = sec.getAttribute("id");
+                    if (scrollPos >= top && scrollPos < top + height) {
+                        navLinks.forEach(link => {
+                            link.classList.remove("active");
+                            if (link.getAttribute("href") === "#" + id) {
+                                link.classList.add("active");
+                            }
+                        });
+                    }
+                });
+            });
+
+            // 3. Grafik Chart.js pada section About
+            const ctx = document.getElementById("performanceChart").getContext("2d");
+            new Chart(ctx, {
+                type: "line",
+                data: {
+                    labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun"],
+                    datasets: [{
+                        label: "Performa (%)",
+                        data: [65, 72, 70, 84, 89, 95],
+                        borderColor: "#0044ff",
+                        backgroundColor: "rgba(0, 68, 255, 0.15)",
+                        borderWidth: 2,
+                        tension: 0.4,
+                        fill: true,
+                        pointRadius: 3,
+                        pointBackgroundColor: "#000000"
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        x: {
+                            grid: { display: false },
+                            ticks: { color: "#000000", font: { size: 10 } }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: { color: "#000000", font: { size: 10 }, stepSize: 25 }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
 </html>
