@@ -20,6 +20,7 @@ body {
     background-color: #ffffff;
     margin: 0;
     padding: 0;
+    position: relative;
 }
 
 /* Pembungkus utama agar proporsinya presisi seperti wireframe */
@@ -32,32 +33,49 @@ body {
 
 /* 1. Header */
 .header-section {
-    background-color: #ffe5c4; /* Oranye/peach muda */
+    background-color: #ffe5c4;
     border-top: 1px solid #d4a359;
     border-bottom: 1px solid #4a86e8;
     min-height: 110px;
+    z-index: 1020;
+}
+
+.carousel-item img {
+    height: 270px; /* Sesuaikan dengan tinggi section Hero Anda */
+    object-fit: cover;
 }
 
 .logo-circle {
     width: 78px;
     height: 78px;
     border-radius: 50%;
-    border: 1.5px solid #8e3535;
+    border: 1.5px solid #000000;
     font-size: 14px;
-    color: #926c6c;
+    color: #000000;
 }
 
-.nav-menu a {
+/* Penanda Visual Menu Active */
+.nav-menu .nav-link {
     font-size: 14px;
+    color: #000000 !important;
+    padding-bottom: 4px !important;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
 }
 
-.nav-menu a:hover {
-    text-decoration: underline !important;
+.nav-menu .nav-link:hover {
+    border-bottom: 2px solid #555555;
+}
+
+.nav-menu .nav-link.active {
+    font-weight: bold;
+    color: #0044ff !important;
+    border-bottom: 2px solid #0044ff;
 }
 
 /* 2. Hero Section */
 .hero-section {
-    background-color: #dae8fc; /* Biru muda */
+    background-color: #dae8fc;
     border-bottom: 1px solid #d6b656;
     height: 270px;
     font-size: 14px;
@@ -67,60 +85,61 @@ body {
 .title-box {
     width: 140px;
     height: 70px;
-    border: 1.2px solid #509754;
+    border: 1.2px solid #000000;
     border-radius: 12px;
     font-size: 14px;
-    color: #257d6c;
+    color: #000000 !important;
 }
 
 .title-box-contact {
     width: 155px;
     height: 72px;
-    border: 1.2px solid #457987;
+    border: 1.2px solid #000000;
     border-radius: 12px;
     font-size: 14px;
-    color: #4abace;
+    color: #000000 !important;
 }
 
 /* 3. Services Section */
 .services-section {
-    background-color: #fff2cc; /* Kuning muda */
+    background-color: #fff2cc;
     border-bottom: 1px solid #9673a6;
 }
 
 .services-section h3,
 .about-section h3 {
     font-size: 24px;
-    color: #d1a6a6;
+    color: #000000 !important;
 }
 
 .services-section p,
 .about-section p {
     font-size: 14px;
+    color: #000000 !important;
 }
 
-/* 4. About Section */
+/* 4. About Section & Wadah Chart.js */
 .about-section {
-    background-color: #e1d5e7; /* Ungu muda */
+    background-color: #e1d5e7;
     border-bottom: 1px solid #82b366;
 }
 
-.wave-svg {
+.chart-container {
     width: 100%;
-    max-width: 240px;
-    height: auto;
-    display: block;
+    height: 130px;
+    border: 1.5px solid #000000;
+    border-radius: 6px;
 }
 
 /* 5. Contact Section */
 .contact-section {
-    background-color: #d5e8d4; /* Hijau muda */
+    background-color: #d5e8d4;
     border-bottom: 1px solid #d4a359;
 }
 
 .custom-input {
     height: 28px;
-    border: 1.2px solid #be9d9d;
+    border: 1.2px solid #000000;
     border-radius: 4px;
     background-color: #ffffff;
     padding: 2px 8px;
@@ -129,7 +148,7 @@ body {
 
 .custom-textarea {
     height: 92px;
-    border: 1.2px solid #391414;
+    border: 1.2px solid #000000;
     border-radius: 10px;
     background-color: #ffffff;
     resize: none;
@@ -138,7 +157,7 @@ body {
 
 .custom-input:focus,
 .custom-textarea:focus {
-    border-color: #641818;
+    border-color: #000000;
     box-shadow: none;
 }
 
@@ -159,7 +178,7 @@ body {
 
 /* 6. Footer */
 .footer-section {
-    background-color: #ffe5c4; /* Oranye/peach muda */
+    background-color: #ffe5c4;
     border-bottom: 1px solid #d4a359;
     min-height: 60px;
     font-size: 14px;
